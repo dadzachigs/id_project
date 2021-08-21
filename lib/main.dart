@@ -5,16 +5,43 @@ void main()=>runApp (MaterialApp(
 
   home:MyId(),
 ));
-class MyId extends StatelessWidget {
+
+
+class MyId extends StatefulWidget {
+  
+
 
   @override
+  _MyIdState createState() => _MyIdState();
+}
+  int ninjaLevel =0;
+class _MyIdState extends State<MyId> {
+  @override
   Widget build(BuildContext context) {
+
+
+
+
     return Scaffold(
       backgroundColor: Colors.grey[800],
       appBar: AppBar(
         title: Text("My Ninja ID"),
         centerTitle: true,
         backgroundColor: Colors.grey[700],
+
+      ),
+
+      floatingActionButton: FloatingActionButton(
+
+        onPressed: (){
+          //updating the ui in the build class
+          setState(() {
+            ninjaLevel +=1;
+          });
+
+        },
+        child:Icon (Icons.add),
+        backgroundColor: Colors.grey,
 
       ),
 
@@ -69,7 +96,7 @@ class MyId extends StatelessWidget {
             // another way of putting space between widgets
             SizedBox(height:20.0),
             Text(
-              "8",
+              "$ninjaLevel",
               style: TextStyle(
                 color: Colors.amberAccent [200],
                 letterSpacing:2.0,
