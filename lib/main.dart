@@ -12,7 +12,7 @@ class MyId extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[800],
       appBar: AppBar(
-        title: Text("My application"),
+        title: Text("My Ninja ID"),
         centerTitle: true,
         backgroundColor: Colors.grey[700],
 
@@ -23,6 +23,18 @@ class MyId extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/avatar.jpg"),
+                radius: 40.0,
+
+              ),
+            ),
+            Divider(
+              height: 40.0,
+              color:Colors.grey[700],
+            ),
             Text(
                 "NAME",
               style: TextStyle(
@@ -64,6 +76,29 @@ class MyId extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 22.0,
               ),
+
+            ),
+            SizedBox(height:20.0),
+            Row(
+             children: <Widget>[
+               Icon(
+                 Icons.email,
+                 color:Colors.grey[400],
+
+               ),
+            SizedBox(width: 20.0),
+               Text(
+                 "dchigumbu90@gamil.com",
+
+                 style:TextStyle(
+                   color: Colors.grey[400],
+                   fontSize:20.0,
+                   letterSpacing: 1.0,
+                 ),
+
+               ),
+
+             ],
 
             ),
           ],
